@@ -1,17 +1,32 @@
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
+//Описати класи Man і Woman, що наслідують клас Person.
+////        Обидва класи мають властивості:
+////        firstName
+////        lastName
+////        age
+////        partner
+////        інші властивості, які ви вважаєте необхідними
+////      Обидва класи мають методи:
+////        конструктор, який включає всі поля
+////        сеттер і геттер на полі age, та інші властивості, де це необхідно
+////        isRetired (повертає true, якщо вік більше пенсійного порогу 60 для жінок та 65 для чоловіків)
+////        registerPartnership (мається на увазі, що дружина приймає прізвище чоловіка)
+////        deregisterPartnership (як вхідний параметр приймає boolean: повернення до попереднього прізвища)
+////      За бажанням доповнити один або обидва класи будь-якими властивостями та/або методами.
 public class Main {
     public static void main(String[] args) {
-        // Press Alt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        Man man = new Man("Mykola", "Jonsoniuk", 35);
 
-        // Press Shift+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
+        System.out.println("His name is " + man.firstName + " " + man.lastName + ", and he is " + man.age + " years old , retired: " + man.isRetired());
 
-            // Press Shift+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
-        }
+        Woman woman = new Woman("Anna", "Gogo", 30);
+        System.out.println("Her name is " + woman.firstName + " " + woman.lastName + ", and he is " + woman.age + " years old , retired: " + woman.isRetired());
+
+        man.registerPartnership(woman);
+        System.out.println(man.firstName + " " + man.lastName + ", age: " + man.age);
+        System.out.println(woman.firstName + " " + woman.lastName + ", age: " + woman.age);
+
+        man.deregisterPartnership(true);
+        System.out.println(man.firstName + " " + man.lastName + ", age: " + man.age);
+        System.out.println(woman.firstName + " " + woman.lastName + ", age: " + woman.age);
     }
 }
